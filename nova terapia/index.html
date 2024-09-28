@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#nosso-espaco">Nosso Espaço</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="nosso-espaco">
+        <h2>Nosso Espaço</h2>
+        <div class="espaco-galeria">
+            <div class="card">
+                <img src="./img/IMG-20240916-WA0006.jpg" alt="Espaço 1" class="imagem-thumbnail" onclick="abrirModalImagem(0)">
+                <div class="card-content">
+                    <h3>Espaço 1</h3>
+                    <p>Descrição do espaço 1.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./img/IMG-20240916-WA0007.jpg" alt="Espaço 2" class="imagem-thumbnail"onclick="abrirModalImagem(1)">
+                <div class="card-content">
+                    <h3>Espaço 2</h3>
+                    <p>Descrição do espaço 2.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./img/IMG-20240916-WA0008.jpg" alt="Espaço 3" class="imagem-thumbnail" onclick="abrirModalImagem(2)">
+                <div class="card-content">
+                    <h3>Espaço 3</h3>
+                    <p>Descrição do espaço 3.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./img/IMG-20240916-WA0009.jpg" alt="Espaço 4"class="imagem-thumbnail"onclick="abrirModalImagem(3)">
+                <div class="card-content">
+                    <h3>Espaço 4</h3>
+                    <p>Descrição do espaço 4.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="card">
+            <img src="./img/terapia-individual.webp" alt="Terapia Individual">
+            <div class="card-content">
+                <h3>Terapia Individual</h3>
+                <p>A terapia individual é um espaço seguro e confidencial onde o paciente pode explorar seus sentimentos, comportamentos e pensamentos, com o objetivo de se conhecer melhor, lidar com suas emoções e enfrentar desafios pessoais de maneira mais saudável.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./img/terapia-casal.jpeg" alt="Terapia em Casal">
+            <div class="card-content">
+                <h3>Terapia em Casal</h3>
+                <p>A terapia de casal busca melhorar a comunicação e fortalecer o vínculo entre parceiros. Durante as sessões, questões de relacionamento são trabalhadas de forma conjunta, visando promover o entendimento e a solução de conflitos.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./img/crise-manejo-imagem (1).jpg" alt="Crise de Manejo">
+            <div class="card-content">
+                <h3>Crise de Manejo</h3>
+                <p>O manejo de crise oferece suporte imediato a pessoas em situações de alta tensão emocional. O objetivo é ajudar o indivíduo a lidar com o estresse intenso, estabilizar suas emoções e recuperar o equilíbrio necessário para enfrentar os desafios.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <h2>Adriana Jesus</h2>
+        <div class="sobre-conteudo">
+            <img src="./img/cholinha.jpg" alt="Foto da irmã" class="foto-irma">
+            <p class="texto-sobre">"Olá, sou Adriana de Jesus, terapeuta dedicada com  anos de experiência em ajudar indivíduos a superar desafios pessoais e emocionais. Minha abordagem é centrada no cliente, buscando compreender profundamente suas necessidades e oferecer suporte personalizado. Com uma formação sólida e um compromisso com o crescimento contínuo, meu objetivo é proporcionar um espaço seguro e acolhedor para que você possa explorar e alcançar seu potencial máximo."</p>
+        </div>
+    </section>
+
+    <section id="contatos">
+        <h2>Contatos</h2>
+        <div class="contato-info">
+            <p>Telefone: (11) 93490-1494</p>
+            <p>Endereço: Rua Exemplo, 123 - São Paulo, SP</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Luiz Ricardo e Adriana Jesus. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Botão de Agendar (WhatsApp) -->
+    <a id="btn-agendar" class="btn-agendar" href="javascript:void(0)" onclick="abrirFormulario()">
+        <img src="./img/whatsapp.png" alt="Agendar pelo WhatsApp">
+    </a>
+
+    <!-- Formulário em um modal oculto -->
+    <div id="form-agendar" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharFormulario()">&times;</span>
+            <h2>Agendar Atendimento</h2>
+            <form id="form-agendamento">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+                
+                <label for="hora">Horário:</label>
+                <select id="hora" name="hora" required>
+                    <!-- Horários de meia em meia hora, das 8h às 18h -->
+                    <option value="08:00">08:00</option>
+                    <option value="08:30">08:30</option>
+                    <option value="09:00">09:00</option>
+                    <option value="09:30">09:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                </select>
+                
+                <button type="submit">Agendar</button>
+            </form>
+        </div>
+    </div>
+
+ 
+</div>
+<!-- Modal de Imagem -->
+<div id="modal-img" class="modal-img">
+    <span class="close-img">&times;</span>
+    <img class="modal-img-content" id="img01">
+   
+</div>
+
+<div id="myModal" class="modal-1">
+    <span class="close-1">&times;</span>
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <div class="modal-content-1">
+        <img class="modal-image-1" src="" alt="">
+    </div>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
